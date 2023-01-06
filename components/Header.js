@@ -68,7 +68,7 @@ function ModeToggle() {
 
 export function Header() {
   return (
-    <header className="sticky top-4 z-50">
+    <header className="relative top-4 z-20">
       <div className="relative flex gap-x-4">
         <div className="flex flex-1"></div>
         <div className="flex flex-1 justify-end md:justify-center">
@@ -76,7 +76,15 @@ export function Header() {
             <ul className="flex rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
               <li>
                 <Link
-                  className="relative block px-3 py-2 transition hover:text-sky-500 dark:hover:text-sky-400"
+                  className="relative block px-3 py-2 transition hover:text-indigo-500 dark:hover:text-indigo-600"
+                  href="/"
+                >
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="relative block px-3 py-2 transition hover:text-indigo-500 dark:hover:text-indigo-600"
                   href="/about"
                 >
                   About
@@ -84,15 +92,7 @@ export function Header() {
               </li>
               <li>
                 <Link
-                  className="relative block px-3 py-2 transition hover:text-sky-500 dark:hover:text-sky-400"
-                  href="/articles"
-                >
-                  Articles
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="relative block px-3 py-2 transition hover:text-sky-500 dark:hover:text-sky-400"
+                  className="relative block px-3 py-2 transition hover:text-indigo-500 dark:hover:text-indigo-600"
                   href="/projects"
                 >
                   Projects
@@ -100,7 +100,7 @@ export function Header() {
               </li>
               <li>
                 <Link
-                  className="relative block px-3 py-2 transition hover:text-sky-500 dark:hover:text-sky-400"
+                  className="relative block px-3 py-2 transition hover:text-indigo-500 dark:hover:text-indigo-600"
                   href="/speaking"
                 >
                   Speaking
@@ -108,7 +108,7 @@ export function Header() {
               </li>
               <li>
                 <Link
-                  className="relative block px-3 py-2 transition hover:text-sky-500 dark:hover:text-sky-400"
+                  className="relative block px-3 py-2 transition hover:text-indigo-500 dark:hover:text-indigo-600"
                   href="/uses"
                 >
                   Uses

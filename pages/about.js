@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Home from "../components/Moleculs/Home/Home";
+import About from "../components/Moleculs/About/About";
 
 export default function HomePage() {
   return (
@@ -9,7 +9,7 @@ export default function HomePage() {
           M Alfito Rahman - Software Engineer, Web Developer, and UI/UX Designer
         </title>
       </Head>
-      <Home />
+      <About />
     </>
   );
 }

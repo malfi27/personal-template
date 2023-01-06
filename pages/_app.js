@@ -5,7 +5,7 @@ import "../styles/globals.css";
 export default function App({ Component, pageProps, router }) {
   return (
     <>
-      <div className="relative py-8 overflow-x-hidden">
+      <div className="relative pt-8 overflow-x-hidden">
         <div className="container relative">
           {/*Gradient Effect */}
           <div className="absolute top-56 xl:top-64 transition-all left-8 md:left-20 rotate-[35deg]">

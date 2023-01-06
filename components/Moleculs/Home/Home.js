@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { TypeAnimation } from "react-type-animation";
 import logoKreasiAsia from "../../../public/Work/KreasiAsia.svg";
 import logoPrantara from "../../../public/Work/Prantara.svg";
@@ -8,7 +9,7 @@ import logoStartcode from "../../../public/Work/Startcode.svg";
 const description =
   "I’m Alfito, a frontend developer based in Bogor City Indonesia. I’m the founder and CEO of Startcode Id, where we develop technologies that empower people to grow their business using web and mobile applications.";
 
-function BriefcaseIcon(props) {
+const BriefcaseIcon = (props) => {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -29,11 +30,32 @@ function BriefcaseIcon(props) {
       />
     </svg>
   );
-}
-function Resume() {
+};
+const ArrowRightIcon = (props) => {
+  return (
+    <>
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        {...props}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M8.04289 19.2071C7.65237 18.8166 7.65237 18.1834 8.04289 17.7929L13.8358 12L8.04289 6.20711C7.65237 5.81658 7.65237 5.18342 8.04289 4.79289C8.43342 4.40237 9.06658 4.40237 9.45711 4.79289L15.25 10.5858C16.031 11.3668 16.031 12.6332 15.25 13.4142L9.45711 19.2071C9.06658 19.5976 8.43342 19.5976 8.04289 19.2071Z"
+          fill=""
+        />
+      </svg>
+    </>
+  );
+};
+const Resume = () => {
   let resume = [
     {
-      company: "Startcode iD",
+      company: "Startcode ID",
       title: "Founder & CEO",
       logo: logoStartcode,
       start: "2021",
@@ -67,12 +89,12 @@ function Resume() {
       title: "Front End Developer",
       logo: logoKreasiAsia,
       start: "2021",
-      end: "2021 Desember",
+      end: "2021 November",
     },
   ];
 
   return (
-    <div className="rounded-2xl border bg-white dark:bg-woodsmoke-700 dark:bg-opacity-40 dark:backdrop-blur-lg bg-opacity-40 backdrop-blur-lg border-zinc-200 p-6 dark:border-zinc-700/40">
+    <div className="rounded-2xl border bg-white dark:bg-woodsmoke-700 dark:bg-opacity-40 dark:backdrop-blur-lg bg-opacity-60 backdrop-blur-lg border-zinc-100 p-6 dark:border-zinc-700/40">
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
         <BriefcaseIcon className="h-6 w-6 flex-none" />
         <span className="ml-3">Work</span>
@@ -118,17 +140,68 @@ function Resume() {
       </ol>
     </div>
   );
-}
-function Project() {
+};
+const Project = () => {
   let listProject = [
+    {
+      title: "Dunia Anura",
+      desc: "Dunia Anura adalah aplikasi yang berfungsi untuk membantu toko mengelola para hewan hewan yang terjual, mati ataupun alasan lainnya. Aplikasi ini dibuat dengan menggunakan Next js and Express js.",
+      link: "/duniaanura",
+      date: "November 15, 2022",
+    },
     {
       title: "Kandangku",
       desc: "Kandangku adalah aplikasi yang berfungsi untuk memudahkan peternak dalam mengelola kandang ayam petelur. Aplikasi ini dibuat dengan menggunakan React Native dan Laravel.",
       link: "/kandangku",
-      date: "September 5, 2021",
+      date: "Oktober , 2021",
+    },
+    {
+      title: "Planteria",
+      desc: "Planteria adalah aplikasi yang berfungsi untuk memudahkan pengguna dalam memelihara tanaman. Aplikasi ini dibuat dengan menggunakan Laravel",
+      link: "/planteria",
+      date: "Maret 5, 2021",
+    },
+    {
+      title: "ETWPAD",
+      desc: "Etwpad adalah aplikasi yang berfungsi untuk memudahkan pengguna dalam mengelola data keuangan anggota tni angkatan darat indonesia. Aplikasi ini dibuat dengan menggunakan Laravel",
+      link: "/planteria",
+      date: "November 17, 2021",
     },
   ];
-}
+  return (
+    <>
+      <div className="flex flex-col gap-y-6">
+        {listProject.map((project, index) => {
+          return (
+            <div
+              key={index}
+              className="rounded-2xl p-6 hover:bg-zinc-100 dark:bg-woodsmoke-700 dark:bg-opacity-40 dark:backdrop-blur-lg dark:hover:bg-woodsmoke-600 dark:hover:bg-opacity-40 dark:transition-all transition-all"
+            >
+              <span className="border-l-2 border-zinc-200 pl-2 text-woodsmoke-400 text-sm dark:text-woodsmoke-300">
+                {project.date}
+              </span>
+              <h1 className="mt-4 font-semibold text-lg text-woodsmoke-800 dark:text-white">
+                {project.title}
+              </h1>
+              <p className="mt-2 text-woodsmoke-400 text-sm dark:text-woodsmoke-300">
+                {project.desc}
+              </p>
+              <Link
+                href={`${project.link}`}
+                className={
+                  "flex items-center gap-x-2 text-xs mt-4 w-fit text-woodsmoke-500 hover:text-indigo-500 font-semibold group transition-colors"
+                }
+              >
+                View Project
+                <ArrowRightIcon className="fill-woodsmoke-400 h-4 w-4 group-hover:fill-indigo-500 transition-colors" />
+              </Link>
+            </div>
+          );
+        })}
+      </div>
+    </>
+  );
+};
 const Home = () => {
   return (
     <>
@@ -160,9 +233,11 @@ const Home = () => {
           {description}
         </p>
       </div>
-      <div className="mt-16 grid grid-cols-1 lg:grid-cols-5 gap-x-4">
-        <div className="col-span-1 lg:col-span-3"></div>
-        <div className="flex flex-col gap-y-6 col-span-1 lg:col-span-2">
+      <div className="mt-16 grid grid-cols-1 lg:grid-cols-7 gap-x-8 gap-y-6">
+        <div className="col-span-1 lg:col-span-4">
+          <Project />
+        </div>
+        <div className="flex flex-col gap-y-6 col-span-1 lg:col-span-3">
           <Resume />
         </div>
       </div>
