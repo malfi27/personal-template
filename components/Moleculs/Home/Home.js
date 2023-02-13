@@ -145,32 +145,35 @@ const Project = () => {
   let listProject = [
     {
       title: "Dunia Anura",
-      desc: "Dunia Anura adalah aplikasi yang berfungsi untuk membantu toko mengelola para hewan hewan yang terjual, mati ataupun alasan lainnya. Aplikasi ini dibuat dengan menggunakan Next js and Express js.",
+      desc: "The Dunia Anura application helps pet stores manage the animals they sell, die or for other reasons. This application was created using Next js and Express js.",
       link: "/duniaanura",
       date: "November 15, 2022",
     },
     {
       title: "Kandangku",
-      desc: "Kandangku adalah aplikasi yang berfungsi untuk memudahkan peternak dalam mengelola kandang ayam petelur. Aplikasi ini dibuat dengan menggunakan React Native dan Laravel.",
+      desc: "Kandangku is an application that helps poultry farmers manage their egg-laying chicken coops. This application was created using React Native and Laravel.",
       link: "/kandangku",
       date: "Oktober , 2021",
     },
     {
       title: "Planteria",
-      desc: "Planteria adalah aplikasi yang berfungsi untuk memudahkan pengguna dalam memelihara tanaman. Aplikasi ini dibuat dengan menggunakan Laravel",
+      desc: "Planteria is an application that helps users take care of plants. This application was created using Laravel.",
       link: "/planteria",
       date: "Maret 5, 2021",
     },
     {
       title: "ETWPAD",
-      desc: "Etwpad adalah aplikasi yang berfungsi untuk memudahkan pengguna dalam mengelola data keuangan anggota tni angkatan darat indonesia. Aplikasi ini dibuat dengan menggunakan Laravel",
+      desc: "Etwpad is an application that helps users manage the financial data of members of the Indonesian Army. This application was created using Laravel.",
       link: "/planteria",
       date: "November 17, 2021",
     },
   ];
   return (
     <>
-      <div className="flex flex-col gap-y-6">
+      <h1 className="text-2xl font-bold text-woodsmoke-900 dark:text-white">
+        The Last Of Project
+      </h1>
+      <div className="flex flex-col gap-y-6 mt-6">
         {listProject.map((project, index) => {
           return (
             <div
